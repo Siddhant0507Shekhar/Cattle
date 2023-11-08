@@ -39,11 +39,11 @@ def process_image(img):
 # Create a dictionary to hold the image name and bytes
 image_dict = {f"Image {i}": get_image_bytes(images[i-1]) for i in range(1, 11)}
 
-for i in range(0, 10, 5):
-    cols = st.columns(5)
-    for j in range(5):
-        image = Image.open(io.BytesIO(image_dict[f"Image {i+j+1}"]))
-        cols[j].image(image, width=125)
+# for i in range(0, 10, 5):
+#     cols = st.columns(5)
+#     for j in range(5):
+#         image = Image.open(io.BytesIO(image_dict[f"Image {i+j+1}"]))
+#         cols[j].image(image, width=125)
 
 uploaded_file = st.file_uploader("Choose an image from your desktop", type=['png', 'jpg', 'jpeg'])
 if uploaded_file is not None:
